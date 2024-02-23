@@ -68,7 +68,7 @@ const CreatePage = ( ) => {
           onSubmit={form.handleSubmit(onSubmit)}
           className="space-y-8 mt-8">
 
-<FormField
+          <FormField
               control={form.control}
               name="title"
               render={({ field }) => (
