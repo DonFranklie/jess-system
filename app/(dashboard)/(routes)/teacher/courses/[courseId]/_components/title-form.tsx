@@ -101,7 +101,7 @@ export const TitleForm = ({
                   <FormControl>
                     <Input
                       disabled={isSubmitting}
-                      placeholder="e.g. 'Advanced web development'"
+                      placeholder="e.g. 'Partial Differential Equations I'"
                       {...field}
                     />
                   </FormControl>
