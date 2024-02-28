@@ -13,9 +13,20 @@ const guestRoutes = [
   },
   {
     icon: Compass,
-    label: "Browse",
-    href: "/search"
+    label: "Past Papers",
+    href: "/past-papers"
   },
+  {
+    icon: Compass,
+    label: "Learning Resources",
+    href: "/learning-resources"
+  },
+  {
+    icon: Compass,
+    label: "Learning Videos",
+    href: "/learning-videos"
+  },
+
 
 ]
 
