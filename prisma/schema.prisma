@@ -13,13 +13,18 @@ model Course {
 
   userId String
   title String @db.Text
+  unitCode    String? @db.Text
+  course      String? @db.Text
+  department  String? @db.Text
+  school      String? @db.Text
+  college     String? @db.Text
   description String? @db.Text
-  imageUrl String? @db.Text
-  price Float?
+  Url String? @db.Text
+  // price Float?
   isPublished Boolean @default(false)
   
-  categoryId String?
-  category Category? @relation(fields: [categoryId], references: [id])
+  // categoryId String?
+  // category Category? @relation(fields: [categoryId], references: [id])
 
 
   attachments Attachment[]
@@ -27,16 +32,16 @@ model Course {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-   @@index([categoryId])
+  //  @@index([categoryId])
   
 }
 
 
-model Category {
-  id String @id @default(uuid())
-  name String @unique
-  courses Course[]
-}
+// model Category {
+//   id String @id @default(uuid())
+//   name String @unique
+//   courses Course[]
+// }
 
 
 
@@ -57,23 +62,16 @@ model Attachment {
 
 model PastPaper {
   id          String     @id @default(uuid())
-  userId      String
-  college     String
   unitName    String
   unitCode    String
   course      String
   department  String
   school      String
-  title       String     @db.Text
+  college     String
   description String?    @db.Text
-  imageUrl    String?    @db.Text
-  price       Float?
+  Url    String?    @db.Text
   isPublished Boolean    @default(false)
-
-  categoryId  String?
 
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
-
-  @@index([categoryId])
 }
