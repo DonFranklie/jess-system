@@ -45,7 +45,7 @@ const CreatePage = ( ) => {
     try {
       const response = await axios.post("/api/courses", values);
       router.push(`/teacher/courses/${response.data.id}`);
-      toast.success("Course created");
+      toast.success("Past Paper instance created");
     } catch {
       toast.error("Something went wrong");
     }
@@ -56,11 +56,11 @@ const CreatePage = ( ) => {
     <div className="max-w-5xl mx-auto flex md:items-center md:justify-center h-full p-6">
      <div>
       <h1 className="text-2xl">
-        Name your Course
+        Past Paper name
       </h1>
 
       <p className="text-sm text-slate-600">
-        What would you like to name your course? You can change it later
+        What is the name of this Past Paper? You can change it later
       </p>
 
       <Form {...form}>
@@ -74,7 +74,7 @@ const CreatePage = ( ) => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>
-                    Course title
+                    Past Paper title
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -84,7 +84,7 @@ const CreatePage = ( ) => {
                     />
                   </FormControl>
                   <FormDescription>
-                    What will you teach in this course?
+                    Past Paper Description?
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
