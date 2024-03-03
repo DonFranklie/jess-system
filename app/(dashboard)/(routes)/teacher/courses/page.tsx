@@ -6,7 +6,7 @@ const CoursePage = () => {
     <div className="p-6">
       <Link href="/teacher/create">
         <Button>
-          New Course
+         Upload Past Paper
         </Button>
 
       </Link>
