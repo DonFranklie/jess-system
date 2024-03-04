@@ -13,6 +13,8 @@ import { SchoolNameForm } from "./_components/school-form";
 import { CollegeNameForm } from "./_components/college-form";
 import { AttachmentForm } from "./_components/attachment-form";
 import { PastPaperForm } from "./_components/paper-form";
+import { Banner } from "@/components/banner";
+import { Actions } from "./_components/actions";
 
 const CourseIdPage = async ({
   params
@@ -53,18 +55,30 @@ const CourseIdPage = async ({
     course.school,
     course.college,
     course.description,
-    course.Url,
+    course.attachments,
     // course.categoryId,
     // course.chapters.some(chapter => chapter.isPublished),
   ];
+
+
 
   const totalFields = requiredFields.length;
   const completedFields = requiredFields.filter(Boolean).length;
 
   const completionText = `(${completedFields}/${totalFields})`;
 
+  const isComplete = requiredFields.every(field => field !== undefined && field !== null);
+
+
+  // const  isComplete = requiredFields.every(Boolean);
+
 
   return (  
+    <>
+    {!course.isPublished && (
+      <Banner
+      label="This Past Paper is yet to be published. It will not be visible to students."/>
+    )}
     <div className="p-6">
 
       <div className="flex items-center justify-between">
@@ -77,6 +91,13 @@ const CourseIdPage = async ({
             </span>
 
         </div>
+
+        {/* Adding actions */}
+        <Actions 
+          disabled={!isComplete}
+          courseId={params.courseId}
+          isPublished={course.isPublished}
+        />
 
       </div>
       
@@ -136,6 +157,7 @@ const CourseIdPage = async ({
             </div>
       </div>
     </div>
+    </>
   );
 }
  
