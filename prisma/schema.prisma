@@ -19,7 +19,7 @@ model Course {
   school      String? @db.Text
   college     String? @db.Text
   description String? @db.Text
-  Url String? @db.Text
+  // Url String? @db.Text
   // price Float?
   isPublished Boolean @default(false)
   
