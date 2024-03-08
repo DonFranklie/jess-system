@@ -1,7 +1,8 @@
-import { Course } from "@prisma/client";
+import { Course, Attachment } from "@prisma/client";
 import { CourseCard } from "@/components/course-card";
 
 type CourseWithProgressWithCategory = Course & {
+  attachments: Attachment[]; // Assuming you have an Attachment type
 }
 
 interface CoursesListProps {
@@ -17,11 +18,12 @@ export const CourseList = ({
     <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4">
       {items.map((item) => (
         <CourseCard
-        key={item.id}
-        id={item.id}
-        title={item.title}
-        department={item.department!}
-        college={item.college!}
+          key={item.id}
+          id={item.id}
+          title={item.title}
+          department={item.department!}
+          college={item.college!}
+          attachments={item.attachments} // Pass attachments to CourseCard
         />
       ))}
     </div>
