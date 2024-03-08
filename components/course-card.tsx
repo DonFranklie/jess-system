@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 interface CourseCardProps {
   id: string;
@@ -32,6 +33,8 @@ export const CourseCard = ({
           <p className="text-xs text-muted-foreground">{department}</p>
 
           <p className="text-xs text-muted-foreground">{college}</p>
+
+          <Button className="mt-2">Download</Button>
         </div>
       </div>
     </Link>
