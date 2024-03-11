@@ -1,6 +1,6 @@
 "use client";
 
-import { BarChart, Compass, Layout, List } from "lucide-react";
+import { BarChart, Book, Compass, File, Film, Layout, List } from "lucide-react";
 import { SidebarItem } from "./sidebar-item";
 
 import { usePathname } from "next/navigation";
@@ -12,17 +12,17 @@ const guestRoutes = [
     href: "/"
   },
   {
-    icon: Compass,
+    icon: File,
     label: "Past Papers",
     href: "/past-papers"
   },
   {
-    icon: Compass,
+    icon: Book,
     label: "Learning Resources",
     href: "/learning-resources"
   },
   {
-    icon: Compass,
+    icon: Film,
     label: "Learning Videos",
     href: "/learning-videos"
   },
