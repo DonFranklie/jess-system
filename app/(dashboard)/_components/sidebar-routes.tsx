@@ -37,6 +37,11 @@ const teacherRoutes = [
     href: "/teacher/courses",
   },
   {
+    icon: Book,
+    label: "Resources",
+    href:"/teacher/resources"
+  },
+  {
     icon: BarChart,
     label: "Analytics",
     href: "/teacher/analytics",
