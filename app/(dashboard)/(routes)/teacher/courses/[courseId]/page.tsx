@@ -56,8 +56,6 @@ const CourseIdPage = async ({
     course.college,
     course.description,
     course.attachments,
-    // course.categoryId,
-    // course.chapters.some(chapter => chapter.isPublished),
   ];
 
 
@@ -69,8 +67,6 @@ const CourseIdPage = async ({
 
   const isComplete = requiredFields.every(field => field !== undefined && field !== null);
 
-
-  // const  isComplete = requiredFields.every(Boolean);
 
 
   return (  
