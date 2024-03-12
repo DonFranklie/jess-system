@@ -12,7 +12,7 @@ const handleAuth = () => {
 }
 
   export const ourFileRouter = {
-    pastPaper: f(["pdf"])
+    resourceImage: f({ image: { maxFileSize: "8MB", maxFileCount: 1 }})
       .middleware(() => handleAuth())
       .onUploadComplete(() => {}),
     courseAttachment: f(["pdf"])
