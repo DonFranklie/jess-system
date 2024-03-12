@@ -20,31 +20,17 @@ model Course {
   school      String? @db.Text
   college     String? @db.Text
   description String? @db.Text
-  // Url String? @db.Text
-  // price Float?
-  isPublished Boolean @default(false)
-  
-  // categoryId String?
-  // category Category? @relation(fields: [categoryId], references: [id])
 
+  isPublished Boolean @default(false)
 
   attachments Attachment[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  //  @@index([categoryId])
   @@fulltext([title])
   
 }
-
-
-// model Category {
-//   id String @id @default(uuid())
-//   name String @unique
-//   courses Course[]
-// }
-
 
 
 model Attachment {
@@ -61,19 +47,38 @@ model Attachment {
   @@index([courseId])
 }
 
+model Resource {
+  id String @id @default(uuid())
 
-model PastPaper {
-  id          String     @id @default(uuid())
-  unitName    String
-  unitCode    String
-  course      String
-  department  String
-  school      String
-  college     String
-  description String?    @db.Text
-  Url    String?    @db.Text
-  isPublished Boolean    @default(false)
+  userId String
+  title String @db.Text
+  author      String? @db.Text
+  school      String? @db.Text
+  college     String? @db.Text
+  description String? @db.Text
+  imageUrl String? @db.Text
 
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
+  isPublished Boolean @default(false)
+
+  documents Document[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@fulltext([title])
+  
+}
+model Document {
+  id String @id @default(uuid())
+  name String
+  url String @db.Text
+
+  resourceId String
+  resource Resource @relation(fields: [resourceId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+
+  @@index([resourceId])
 }
