@@ -68,6 +68,7 @@ model Resource {
   @@fulltext([title])
   
 }
+
 model Document {
   id String @id @default(uuid())
   name String
