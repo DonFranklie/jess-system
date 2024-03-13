@@ -18,6 +18,9 @@ const handleAuth = () => {
     courseAttachment: f(["pdf"])
       .middleware(() => handleAuth())
       .onUploadComplete(() => {}),
+      resourceAttachment: f(["pdf"])
+      .middleware(() => handleAuth())
+      .onUploadComplete(() => {}),
     chapterVideo: f({ video: { maxFileCount: 1, maxFileSize: "512GB" } })
       .middleware(() => handleAuth())
       .onUploadComplete(() => {})
