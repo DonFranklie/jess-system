@@ -8,6 +8,7 @@ import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { SearchInput } from "@/components/search-input";
+import { ResourceSearchInput } from "./resource-search-input";
 
 export const NavbarRoutes = () => {
   const pathname = usePathname();   
@@ -16,6 +17,7 @@ export const NavbarRoutes = () => {
   const isTeacherPage = pathname?.startsWith("/teacher");
   const isPlayerPage = pathname?.includes("/chapter");
   const isSearchPage = pathname === "/past-papers"
+  const isResourcePage = pathname === "/learning-resources"
 
 
 
@@ -24,6 +26,11 @@ export const NavbarRoutes = () => {
     {isSearchPage  && (
       <div className="hidden md:block">
         <SearchInput />
+      </div>
+    )}
+    {isResourcePage  && (
+      <div className="hidden md:block">
+        <ResourceSearchInput />
       </div>
     )}
     <div className="flex gap-x-2 ml-auto">
