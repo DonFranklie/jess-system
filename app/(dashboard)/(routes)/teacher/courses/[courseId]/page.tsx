@@ -145,13 +145,22 @@ const CourseIdPage = async ({
               courseId={course.id}
             />
 
+            <div className="mt-4">
+           <div className="flex items-center gap-x-2">
+            <IconBadge icon={File}/>
+            <h2 className="text-lg">Past Paper</h2>
+           </div>
              
               <AttachmentForm
                 initialData={course}
                 courseId={course.id}
               />
+              </div>
+
             </div>
+            
       </div>
+      
     </div>
     </>
   );
