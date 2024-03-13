@@ -5,13 +5,15 @@ import { LogOut } from "lucide-react";
 
 import Link from "next/link";
 
-import { UserButton } from "@clerk/nextjs";
+import { UserButton, useAuth } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { SearchInput } from "@/components/search-input";
 import { ResourceSearchInput } from "./resource-search-input";
+import { isAdmin } from "@/lib/admin";
 
 export const NavbarRoutes = () => {
-  const pathname = usePathname();   
+  const pathname = usePathname(); 
+  const { userId } = useAuth(); 
  
 
   const isTeacherPage = pathname?.startsWith("/teacher");
@@ -41,13 +43,13 @@ export const NavbarRoutes = () => {
             Exit
           </Button>
         </Link>
-      ) : (
+      ) : isAdmin(userId) ? (
         <Link href="/teacher/courses">
           <Button size="sm" variant="ghost">
             Admin mode
           </Button>
         </Link>
-      )}
+      ): null}
 
       <UserButton
          afterSignOutUrl="/"
