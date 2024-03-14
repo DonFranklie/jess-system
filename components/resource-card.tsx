@@ -48,7 +48,7 @@ export const ResourceCard = ({
           <p className="text-xs text-muted-foreground">{school}</p>
 
           {documents.length > 0 && (
-<Link href={downloadUrl} download>
+<Link href={downloadUrl} download target="_blank">
 <Button className="mt-2">
             Download
           </Button>

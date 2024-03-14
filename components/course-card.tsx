@@ -48,7 +48,7 @@ export const CourseCard = ({
           <p className="text-xs text-muted-foreground">{college}</p>
 
           {attachments.length > 0 && (
-<Link href={downloadUrl} download>
+<Link href={downloadUrl} download target="_blank">
 <Button className="mt-2">
             Download
           </Button>
