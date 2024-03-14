@@ -1,5 +1,6 @@
 import { Course, Attachment } from "@prisma/client";
 import { CourseCard } from "@/components/course-card";
+import Link from "next/link";
 
 type CourseWithProgressWithCategory = Course & {
   attachments: Attachment[]; // Assuming you have an Attachment type
@@ -29,7 +30,7 @@ export const CourseList = ({
     </div>
     {items.length === 0 && (
       <div className="text-center text-sm mt-10  text-muted-foreground">
-        No Papers found
+        No Papers found. <Link href="/request" className="text-sky-500">Request for the Paper</Link>
       </div>
     )}
    </div>
