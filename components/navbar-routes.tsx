@@ -20,6 +20,7 @@ export const NavbarRoutes = () => {
   const isPlayerPage = pathname?.includes("/chapter");
   const isSearchPage = pathname === "/past-papers"
   const isResourcePage = pathname === "/learning-resources"
+  const isRequestPage = pathname === "/request"
 
 
 
