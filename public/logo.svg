@@ -1,7 +1,5 @@
-<svg id="ek9DdJcXi8R1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 7" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" style="background-color:transparent"><text dx="0" dy="0" font-family="&quot;ek9DdJcXi8R1:::Roboto&quot;" font-size="6.05" font-weight="700" transform="translate(2.010076 5.601138)" fill="#007dfc" stroke-width="0"><tspan y="0" font-weight="700" stroke-width="0"><![CDATA[
-JIESS
-]]></tspan></text>
-<style><![CDATA[
-@font-face {font-family: 'ek9DdJcXi8R1:::Roboto';font-style: normal;font-weight: 700;src: url(https://fonts.gstatic.com/l/font?kit=KFOlCnqEu92Fr1MmWUlvAwU5b4i4xg&skey=c06e7213f788649e&v=v30) format('truetype');}
-]]></style>
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chalkboard" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M8 19h-3a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v11a1 1 0 0 1 -1 1" />
+  <path d="M11 16m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
 </svg>
