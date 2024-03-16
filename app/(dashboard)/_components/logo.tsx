@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export const Logo = () => {
   return (
@@ -11,9 +10,8 @@ export const Logo = () => {
     alt="logo"
     src="/logo.svg" 
     /> 
-    <Link href="/">
     <span className="mt-2 text-2xl text-slate-600 font-bold" >JIESS</span>
-    </Link>
+
     </div>
 
   )
