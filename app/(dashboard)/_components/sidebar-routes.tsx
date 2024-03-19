@@ -1,6 +1,6 @@
 "use client";
 
-import { BarChart, Book, Compass, File, Film, Layout, List } from "lucide-react";
+import { BarChart, Book, File, Film,  Layout, List } from "lucide-react";
 import { SidebarItem } from "./sidebar-item";
 
 import { usePathname } from "next/navigation";
@@ -33,7 +33,7 @@ const guestRoutes = [
 const teacherRoutes = [
   {
     icon: List,
-    label: "Courses",
+    label: "Papers",
     href: "/teacher/courses",
   },
   {
@@ -42,10 +42,15 @@ const teacherRoutes = [
     href:"/teacher/resources"
   },
   {
-    icon: BarChart,
-    label: "Analytics",
-    href: "/teacher/analytics",
+    icon: Film,
+    label: "Videos",
+    href: "/teacher/videos"
   },
+  // {
+  //   icon: BarChart,
+  //   label: "Analytics",
+  //   href: "/teacher/analytics",
+  // },
 ]
 
 export const SidebarRoutes = () => {
