@@ -1,8 +1,10 @@
 import { getCourses } from "@/actions/get-papers";
 import { CourseList } from "@/components/courses-list";
 import { SearchInput } from "@/components/search-input";
+import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+import { Categories } from "./_components/categories";
 
 interface SearchPageProps {
   searchParams: {
@@ -22,7 +24,13 @@ const PastPapers = async ({
   const courses = await getCourses({
     userId,
     ...searchParams
-  })
+  });
+
+  const categories =  await db.category.findMany({
+    orderBy: {
+      name: "asc"
+    }
+  });
 
   return (
 <>
@@ -31,7 +39,12 @@ const PastPapers = async ({
 </div>
 
 <div className="p-6">
+  <Categories
+    items={categories}
+  />
+    <div className="mt-4">
     <CourseList items={courses}/>
+    </div>
 </div>
 </>
 
