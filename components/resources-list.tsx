@@ -1,6 +1,7 @@
 import { Document, Resource } from "@prisma/client";
 import { CourseCard } from "@/components/course-card";
 import { ResourceCard } from "./resource-card";
+import Link from "next/link";
 
 type ResourceWithDocuments = Resource & {
   documents: Document[]; // Assuming you have an Attachment type
@@ -30,7 +31,7 @@ export const ResourcesList = ({
     </div>
     {items.length === 0 && (
       <div className="text-center text-sm mt-10  text-muted-foreground">
-        No Resource found
+        No Resource found <Link href="/request" className="text-sky-500">Request for the Resource</Link>
       </div>
     )}
    </div>
