@@ -1,13 +1,15 @@
-import { Course, Attachment } from "@prisma/client";
+import { Course, Attachment, Category } from "@prisma/client";
 import { db } from "@/lib/db";
 
 type CourseWithProgressWithCategory = Course & {
   attachments: Attachment[];
+  category: Category | null;
 };
 
 type GetCourses = {
   userId: string;
   title?: string;
+  categoryId?: string;
 };
 
 // Function to get attachments for a course
@@ -26,7 +28,7 @@ const getAttachmentsForCourse = async (courseId: string): Promise<Attachment[]> 
   }
 };
 
-export const getCourses = async ({ userId, title }: GetCourses): Promise<CourseWithProgressWithCategory[]> => {
+export const getCourses = async ({ userId, title, categoryId }: GetCourses): Promise<CourseWithProgressWithCategory[]> => {
   try {
     const courses = await db.course.findMany({
       where: {
@@ -34,6 +36,10 @@ export const getCourses = async ({ userId, title }: GetCourses): Promise<CourseW
         title: {
           contains: title,
         },
+        categoryId,
+      },
+      include: {
+        category: true,
       },
       orderBy: {
         createdAt: "desc",
