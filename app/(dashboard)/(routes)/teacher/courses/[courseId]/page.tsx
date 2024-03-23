@@ -15,6 +15,7 @@ import { AttachmentForm } from "./_components/attachment-form";
 import { PastPaperForm } from "./_components/paper-form";
 import { Banner } from "@/components/banner";
 import { Actions } from "./_components/actions";
+import { CategoryForm } from "./_components/category-form";
 
 const CourseIdPage = async ({
   params
@@ -43,6 +44,12 @@ const CourseIdPage = async ({
     }
   );
 
+  const categories = await db.category.findMany({
+    orderBy: {
+      name: "asc",
+    }
+  });
+
   if (!course) {
     return redirect("/");
   }
@@ -53,8 +60,8 @@ const CourseIdPage = async ({
     course.course,
     course.department,
     course.school,
-    course.college,
     course.description,
+    course.categoryId,
     course.attachments,
   ];
 
@@ -140,9 +147,19 @@ const CourseIdPage = async ({
               courseId={course.id}
             />
 
-            <CollegeNameForm
+            {/* <CollegeNameForm
               initialData={course}
               courseId={course.id}
+            /> */}
+
+            <CategoryForm
+            initialData={course}
+            courseId={course.id}
+            options={categories.map((category)=>({
+              label: category.name,
+              value: category.id,
+            }))}
+            
             />
 
             <div className="mt-4">
