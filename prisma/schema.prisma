@@ -94,3 +94,23 @@ model Document {
 
   @@index([resourceId])
 }
+
+model Video {
+  id String @id @default(uuid())
+
+  userId String
+  title String @db.Text
+  author      String? @db.Text
+  school      String? @db.Text
+  college     String? @db.Text
+  description String? @db.Text
+  Url String? @db.Text
+
+  isPublished Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@fulltext([title])
+  
+}
