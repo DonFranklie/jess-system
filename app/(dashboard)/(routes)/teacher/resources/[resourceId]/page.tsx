@@ -41,6 +41,7 @@ const ResourceIdPage = async ({
       }
     );
 
+
   if(!resource){
     return redirect("/");
   }
@@ -116,10 +117,6 @@ const ResourceIdPage = async ({
            
 
      </div>
-     {/* <ImageForm
-            initialData={resource}
-            resourceId={resource.id}
-            /> */}
         <div>
            <div className="flex items-center gap-x-2">
             <IconBadge icon={File}/>
