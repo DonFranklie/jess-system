@@ -53,7 +53,7 @@ export async function PATCH(
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
-    const course = await db.resource.update({
+    const resource = await db.resource.update({
       where:{
         id: resourceId,
         userId: userId
@@ -63,7 +63,7 @@ export async function PATCH(
       }
     });
 
-    return NextResponse.json(course);
+    return NextResponse.json(resource);
 
   } catch (error) {
     console.log("[RESOURCES]", error);
