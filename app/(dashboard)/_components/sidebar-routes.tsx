@@ -44,7 +44,7 @@ const teacherRoutes = [
   {
     icon: Film,
     label: "Videos",
-    href: "/teacher/videos"
+    href: "/teacher/films"
   },
   // {
   //   icon: BarChart,
