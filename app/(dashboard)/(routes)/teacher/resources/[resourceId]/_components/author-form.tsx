@@ -76,7 +76,7 @@ export const AuthorForm = ({
           ) : (
             <>
               <Pencil className="h-4 w-4 mr-2" />
-              Edit title
+              Edit Author
             </>
           )}
           
