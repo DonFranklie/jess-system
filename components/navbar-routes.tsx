@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { SearchInput } from "@/components/search-input";
 import { ResourceSearchInput } from "./resource-search-input";
 import { isAdmin } from "@/lib/admin";
+import { VideoSearchInput } from "./video-search-input";
 
 export const NavbarRoutes = () => {
   const pathname = usePathname(); 
@@ -20,6 +21,7 @@ export const NavbarRoutes = () => {
   const isPlayerPage = pathname?.includes("/chapter");
   const isSearchPage = pathname === "/past-papers"
   const isResourcePage = pathname === "/learning-resources"
+  const isVideoPage = pathname === "/learning-videos"
   const isRequestPage = pathname === "/request"
 
 
@@ -36,6 +38,14 @@ export const NavbarRoutes = () => {
         <ResourceSearchInput />
       </div>
     )}
+
+    {isVideoPage  && (
+      <div className="hidden md:block">
+        <VideoSearchInput />
+      </div>
+    )}
+
+
     <div className="flex gap-x-2 ml-auto">
       {isTeacherPage || isPlayerPage ? (
           <Link href="/">
