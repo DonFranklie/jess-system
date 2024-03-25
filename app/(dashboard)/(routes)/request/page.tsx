@@ -35,10 +35,10 @@ const RequestPage = () => {
 
   return (
     <div className='grid place-content-center h-1/2'>
-      <div className='flex flex-col w-[500px] gap-y-2'>
-      <h1 className='text-slate-600 text-xl'>Request Document</h1>
+      <div className='flex flex-col sm:w-full md:w-[500px] gap-y-2'>
+      <h1 className='text-slate-600 text-xl'>Request Learning Material</h1>
       <div>
-        <label htmlFor="paperName">Name of Document:</label>
+        <label htmlFor="paperName">Name of Learning Material:</label>
         <Input
           type="text"
           id="paperName"
